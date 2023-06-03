@@ -16,9 +16,8 @@ int findMinKey(int key[], bool mstSet[]) {
 
 void printMST(int parent[], int graph[V][V]) {
     std::cout << "Edge \tWeight\n";
-    std::cout << parent[1] << " - " << 1 << "\t" << graph[1][parent[1]] << std::endl;
-    for (int v = 2; v < V; ++v) {
-        std::cout <<  "0 - " << v << "\t" << graph[v][parent[v]]+graph[parent[v]][parent[v-1]] << std::endl;
+    for (int v = 1; v < V; ++v) {
+        std::cout << parent[v] << " - " << v << "\t" << graph[v][parent[v]] << std::endl;
     }
 }
 
